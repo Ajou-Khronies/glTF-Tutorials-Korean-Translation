@@ -111,7 +111,7 @@ This binary data is just a raw block of memory that is read from the URI of the 
 이 바이너리 데이터는 메모리의 원시 블록으로서 `buffer`의 URI로부터 읽게 됩니다. 이때 상속 개념이나 구조에 대한 정보는 포함되지 않습니다.  [Buffers, BufferViews, and Accessors](gltfTutorial_005_BuffersBufferViewsAccessors.md) 절에서는 어떻게 원시 데이터가 자료형과 데이터 레이아웃 정보를 갖게 만드는지를 설명하고 있습니다. 이 정보로 부터, 데이터의 일부분은 예를들면, 애니메이션 데이터로, 다른 부분은 기하 데이터로 해석 될 수 있습니다. 데이터를 바이너리 형식으로 저장함으로써 JSON 포맷으로 전송하는 것에 비해 훨씬 효율적으로 전송할 수 있으며, 바이너리 데이터가 직접적으로 렌더러에 전달되므로 디코드나 전처리가 필요하지 않게 됩니다. 
 
 
-## Image data in `images` - 
+## Image data in `images` - `images`의 이미지 데이터
 
 An [`image`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-image) may refer to an external image file that can be used as the texture of a rendered object:
 
