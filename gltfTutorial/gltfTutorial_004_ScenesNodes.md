@@ -1,10 +1,12 @@
-Previous: [A Minimal glTF File](gltfTutorial_003_MinimalGltfFile.md) | [Table of Contents](README.md) | Next: [Buffers, BufferViews, and Accessors](gltfTutorial_005_BuffersBufferViewsAccessors.md)
+이전: [A Minimal glTF File](gltfTutorial_003_MinimalGltfFile.md) | [Table of Contents](README.md) | 다음: [Buffers, BufferViews, and Accessors](gltfTutorial_005_BuffersBufferViewsAccessors.md)
 
-# Scenes and Nodes
+# Scenes and Nodes - 장면과 노드
 
-## Scenes
+## Scenes - 장면
 
 There may be multiple scenes stored in one glTF file. The `scene` property indicated which of these scenes should be the default scene that is displayed when the asset is loaded. Each scene contains an array of `nodes`, which are the indices of the root nodes of the scene graphs. Again, there may be multiple root nodes, forming different hierarchies, but in many cases, the scene will have a single root node. The most simple possible scene description has already been shown in the previous section, consisting of a single scene with a single node:
+
+하나의 glTF 파일 안에는 여러개의 장면이 들어 있을 수 있다. `scene` 속성에서는 여러 장면 중에 어는 장면이 기본(default) 장면이 될지를 지정해서 자산이 로딩될때 디스플레이될 장면을 결정한다. 각각의 장면은 `nodes`의 배열이 있어 여기에 장면 그래프들의 루트 노드들의 인덱스들이 들어 있다. 다시, 다수의 루트 노드들이 다른 계층을 구성할 수 있는데, 많은 경우 하나의 장면은 하나의 루트 노드를 갖는다. 가장 간단한 장면 서술은 이전 절에 본 예제와 같이 하나의 장면에 하나의 노드가 있는 경우이다. 
 
 ```javascript
   "scene": 0, 
