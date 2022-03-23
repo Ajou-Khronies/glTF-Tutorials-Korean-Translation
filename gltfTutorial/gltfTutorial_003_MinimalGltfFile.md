@@ -1,9 +1,11 @@
 Previous: [Basic glTF Structure](gltfTutorial_002_BasicGltfStructure.md) | [Table of Contents](README.md) | Next: [Scenes and Nodes](gltfTutorial_004_ScenesNodes.md)
 
 
-# A Minimal glTF File
+# A Minimal glTF File - 최소 glTF 파일
 
 The following is a minimal but complete glTF asset, containing a single, indexed triangle. You can copy and paste it into a `gltf` file, and every glTF-based application should be able to load and render it. This section will explain the basic concepts of glTF based on this example.
+
+다음은 glTF 자산을 완성하기 위해 필요한 최소한의 것들을 모은 것으로, 하나의 인덱싱된 삼각형을 갖고 있습니다. 이것을 복사해서 `gltf` 파일에 붙여넣기 하며, glTF 기반의 응용 프로그램에서 로딩하여 렌더링 해 볼 수 있다. 이 절은 glTF 기초 개념을 예제로 설명하기 위한 것입니다.  
 
 ```javascript
 {
@@ -80,11 +82,11 @@ The following is a minimal but complete glTF asset, containing a single, indexed
 
 <p align="center">
 <img src="images/triangle.png" /><br>
-<a name="triangle-png"></a>Image 3a: A single triangle.
+<a name="triangle-png"></a>Image 3a: A single triangle - 그림 3a: 하나의 삼각형
 </p>
 
 
-## The `scene` and `nodes` structure
+## The `scene` and `nodes` structure - `scene` 과 `nodes` 구조
 
 The [`scenes`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-scene) array is the entry point for the description of the scenes that are stored in the glTF. When parsing a glTF JSON file, the traversal of the scene structure will start here. Each scene contains an array called `nodes`, which contains the indices of [`node`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-node) objects. These nodes are the root nodes of a scene graph hierarchy.
 
