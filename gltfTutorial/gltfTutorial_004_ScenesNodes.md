@@ -149,7 +149,7 @@ For the example matrices given above, the final, local transform matrix of the n
 
 <p align="center">
 <img src="images/productMatrix.png" /><br>
-<a name="produtMatrix-png"></a>Image 4f: The final local transform matrix computed from the TRS properties.
+<a name="produtMatrix-png"></a>Image 4f: The final local transform matrix computed from the TRS properties. - 그림 4f: TRS 속성으로 부터 계산된 최종 로컬 변환 행렬 
 </p>
 
 This matrix will cause the vertices of the meshes to be scaled, then rotated, and then translated according to the `scale`, `rotation`, and `translation` properties that have been given in the node.
