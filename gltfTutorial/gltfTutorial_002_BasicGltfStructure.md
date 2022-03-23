@@ -47,12 +47,12 @@ The following image (adapted from the [glTF concepts section](https://www.khrono
 
 These elements are summarized here quickly, to give an overview, with links to the respective sections of the glTF specification. More detailed explanations of the relationships between these elements will be given in the following sections.
 
-이들 요소를 간단히 설명하고, glTF 표준 문서의 해당 섹션으로 링크를 추가하였습니다. 다음 절에서 상세한 내용과 요소들간의 관계에 대해서 설명할 것이다. 
+이들 요소를 간단히 설명하고, glTF 표준 문서의 해당 섹션으로 링크를 추가하였다. 다음 절에서 상세한 내용과 요소들간의 관계에 대해서 설명할 것이다. 
 
 - The [`scene`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-scene) is the entry point for the description of the scene that is stored in the glTF. It refers to the `node`s that define the scene graph.
 - [`scene`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-scene) 은 장면을 정의 하는 진입점으로 glTF에 저장되어 있다. 장면 그래프를 정의하는 `node`를 참조하게 된다.
 - The [`node`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-node) is one node in the scene graph hierarchy. It can contain a transformation (e.g., rotation or translation), and it may refer to further (child) nodes. Additionally, it may refer to `mesh` or `camera` instances that are "attached" to the node, or to a `skin` that describes a mesh deformation.
-- [`node`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-node)는 장면 그래프 계층 내에 단 하나의 노드로 존재합니다. 노드에는 변환(transformation, 예, 회전, 이동)과 (자식) 노드들을 참조할 수 있습니다. 추가적으로, `mesh` 또는 `camera` 인스턴스를 참조해서 노드에 "첨부(attached)"하거나, `skin`을 통해 메쉬의 변형을 정의할 수 있다. 
+- [`node`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-node)는 장면 그래프 계층 내에 단 하나의 노드로 존재합니다. 노드에는 변환(transformation, 예, 회전, 이동)과 (자식) 노드들을 참조할 수 있다. 추가적으로, `mesh` 또는 `camera` 인스턴스를 참조해서 노드에 "첨부(attached)"하거나, `skin`을 통해 메쉬의 변형을 정의할 수 있다. 
 - The [`camera`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-camera) defines the view configuration for rendering the scene.
 - [`camera`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-camera)는 장면의 렌더링을 위한 시점(view) 설정을 정의한다.
 - A [`mesh`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-mesh) describes a geometric object that appears in the scene. It refers to `accessor` objects that are used for accessing the actual geometry data, and to `material`s that define the appearance of the object when it is rendered.
@@ -73,7 +73,7 @@ These elements are summarized here quickly, to give an overview, with links to t
 
 The binary data, like geometry and textures of the 3D objects, are usually not contained in the JSON file. Instead, they are stored in dedicated files, and the JSON part only contains links to these files. This allows the binary data to be stored in a form that is very compact and can efficiently be transferred over the web. Additionally, the data can be stored in a format that can be used directly in the renderer, without having to parse, decode, or preprocess the data.  
 
-기하 형상이나 3D 오브젝트의 텍스처와 같은 바이너리 데이터는 일반적으로 JSON 파일에 포함하지 않는다. 대신에, 독자적인 파일에 저장한 후 JSON 에서는 이들 파일에 대한 링크만을 포함하게 됩니다. 이를 통해서 바이너리 데이터가 간결하고 웹을 통해 전송될때 효율적으로 저장할 수 있습니다. 추가적으로, 데이터는 렌더러에서 직접 사용되는 포맷으로 저장될 수 있는데 이를 통해 파싱, 디코딩, 전처리가 필요없도록 할 수 있다. 
+기하 형상이나 3D 오브젝트의 텍스처와 같은 바이너리 데이터는 일반적으로 JSON 파일에 포함하지 않는다. 대신에, 독자적인 파일에 저장한 후 JSON 에서는 이들 파일에 대한 링크만을 포함하게 된다. 이를 통해서 바이너리 데이터가 간결하고 웹을 통해 전송될때 효율적으로 저장할 수 있다. 추가적으로, 데이터는 렌더러에서 직접 사용되는 포맷으로 저장될 수 있는데 이를 통해 파싱, 디코딩, 전처리가 필요없도록 할 수 있다. 
 
 <p align="center">
 <img src="images/gltfStructure.png" /><br>
@@ -115,7 +115,7 @@ This binary data is just a raw block of memory that is read from the URI of the 
 
 An [`image`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-image) may refer to an external image file that can be used as the texture of a rendered object:
 
-[`image`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-image)는 외부 이미지 파일을 참조할 수 있습니다. 이를 통해 렌더링 객체의 텍스처로 사용할 수 있다.
+[`image`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-image)는 외부 이미지 파일을 참조할 수 있다. 이를 통해 렌더링 객체의 텍스처로 사용할 수 있다.
 
 ```javascript
 "image01": {
@@ -125,7 +125,7 @@ An [`image`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#refer
 
 The reference is given as a URI that usually points to a PNG or JPG file. These formats significantly reduce the size of the files so that they may efficiently be transferred over the web. In some cases, the `image` objects may not refer to an external file, but to data that is stored in a `buffer`. The details of this indirection will be explained in the [Textures, Images, and Samplers](gltfTutorial_016_TexturesImagesSamplers.md) section. 
 
-참조는 URI로 주어지는데, 일반적으로 PNG나 JPG 파일을 가리키게 됩니다. 이들 포맷은 파일크기를 크게 줄여주는 압축 방식으로서 웹을 통해 전송할때 효율성을 제공해 주게 된다. 경우에 따라서는, `image` 객체가 외부 파일을 참조하지 않으나, `buffer`에 데이터가 저장되어 있을 수 있습니다. 이런 우회 방법에 대한 설명은 [Textures, Images, and Samplers](gltfTutorial_016_TexturesImagesSamplers.md) 절에서 상세하게 설명할 것이다.
+참조는 URI로 주어지는데, 일반적으로 PNG나 JPG 파일을 가리키게 된다. 이들 포맷은 파일크기를 크게 줄여주는 압축 방식으로서 웹을 통해 전송할때 효율성을 제공해 주게 된다. 경우에 따라서는, `image` 객체가 외부 파일을 참조하지 않으나, `buffer`에 데이터가 저장되어 있을 수 있습니다. 이런 우회 방법에 대한 설명은 [Textures, Images, and Samplers](gltfTutorial_016_TexturesImagesSamplers.md) 절에서 상세하게 설명할 것이다.
 
 
 ## Binary data in data URIs - 데이터 URI 내의 바이너리 데이터 
