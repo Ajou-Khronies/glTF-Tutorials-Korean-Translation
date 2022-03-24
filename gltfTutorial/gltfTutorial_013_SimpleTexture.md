@@ -1,6 +1,6 @@
-Previous: [Textures, Images, and Samplers](gltfTutorial_012_TexturesImagesSamplers.md) | [Table of Contents](README.md) | Next: [Advanced Material](gltfTutorial_014_AdvancedMaterial.md)
+이전: [Textures, Images, and Samplers](gltfTutorial_012_TexturesImagesSamplers.md) | [Table of Contents](README.md) | 다음: [Advanced Material](gltfTutorial_014_AdvancedMaterial.md)
 
-# A Simple Texture
+# A Simple Texture - 간단한 텍스처
 
 As shown in the previous sections, the material definition in a glTF asset contains different parameters for the color of the material or the overall appearance of the material under the influence of light. These properties may be given via single values, for example, defining the color or the roughness of the object as a whole. Alternatively, these values may be provided via textures that are mapped on the object surface. The following is a glTF asset that defines a material with a simple, single texture:
 
@@ -140,4 +140,4 @@ In order to apply a texture to a mesh primitive, there must be information about
 In this case, the texture would use the texture coordinates that are contained in the attribute called `TEXCOORD_2`.
 
 
-Previous: [Textures, Images, and Samplers](gltfTutorial_012_TexturesImagesSamplers.md) | [Table of Contents](README.md) | Next: [Advanced Material](gltfTutorial_014_AdvancedMaterial.md)
+이전: [Textures, Images, and Samplers](gltfTutorial_012_TexturesImagesSamplers.md) | [Table of Contents](README.md) | 다음: [Advanced Material](gltfTutorial_014_AdvancedMaterial.md)

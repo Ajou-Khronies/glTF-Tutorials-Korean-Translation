@@ -1,6 +1,6 @@
 Previous: [Morph Targets](gltfTutorial_018_MorphTargets.md) | [Table of Contents](README.md) | Next: [Skins](gltfTutorial_020_Skins.md)
 
-# A Simple Skin
+# A Simple Skin - 간단한 스키닝
 
 glTF supports *vertex skinning*, which allows the geometry (vertices) of a mesh to be deformed based on the pose of a skeleton. This is essential in order to give animated geometry, for example of virtual characters, a realistic appearance. The core for the definition of vertex skinning in a glTF asset is the [`skin`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-skin), but vertex skinning in general implies several interdependencies between the elements of a glTF asset that have been presented so far.
 
@@ -142,17 +142,20 @@ The following is a glTF asset that shows basic vertex skinning for a simple geom
 
 
 
-The result of rendering this asset is shown in Image 19a.
+The result of rendering this asset is shown in Image 19a.   
+렌더링의 결과는 그림 19a와 같다. 
+
 
 <p align="center">
 <img src="images/simpleSkin.gif" /><br>
-<a name="simpleSkin-gif"></a>Image 19a: A scene with simple vertex skinning.
+<a name="simpleSkin-gif"></a>Image 19a: A scene with simple vertex skinning. - 그림 19a: 간단한 버텍스 스키닝을 갖는 장면
 </p>
 
 
-## Elements of the simple skin example
+## Elements of the simple skin example - 간단한 스키닝 예제의 요소
 
-The elements of the given example are briefly summarized here:
+The elements of the given example are briefly summarized here:  
+주어진 예제의 요소들에 대해 간단히 요약하면 다음과 같다. 
 
 - The `scenes` and `nodes` elements have been explained in the [Scenes and Nodes](gltfTutorial_004_ScenesNodes.md) section. For the vertex skinning, new nodes have been added: the nodes at index 1 and 2 define a new node hierarchy for the *skeleton*. These nodes can be considered the joints between the "bones" that will eventually cause the deformation of the mesh.
 - The new top-level dictionary `skins` contains a single skin in the given example. The properties of this skin object will be explained later.
@@ -163,4 +166,4 @@ The elements of the given example are briefly summarized here:
 Details about how these elements are interconnected to achieve the vertex skinning will be explained in the [Skins](gltfTutorial_020_Skins.md) section.
 
 
-Previous: [Morph Targets](gltfTutorial_018_MorphTargets.md) | [Table of Contents](README.md) | Next: [Skins](gltfTutorial_020_Skins.md)
+이전: [Morph Targets](gltfTutorial_018_MorphTargets.md) | [Table of Contents](README.md) | 다음: [Skins](gltfTutorial_020_Skins.md)
