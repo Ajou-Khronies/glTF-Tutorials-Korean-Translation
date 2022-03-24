@@ -171,20 +171,22 @@ The data of the attributes that are stored in a single `bufferView` may be store
 </p>
 
 
-### Data contents - 데이터 컨텐츠
+### Data contents - 데이터 내용
 
 An `accessor` also contains `min` and `max` properties that summarize the contents of their data. They are the component-wise minimum and maximum values of all data elements contained in the accessor. In the case of vertex positions, the `min` and `max` properties thus define the *bounding box* of an object. This can be useful for prioritizing downloads, or for visibility detection. In general, this information is also useful for storing and processing *quantized* data that is dequantized at runtime, by the renderer, but details of this quantization are beyond the scope of this tutorial.
 
-`accessor` 
+`accessor`는 또한 `min` 과 `max` 속성을 갖고 있어, 데이터의 내용을 요약해 준다. 억세서가 갖고 있는 모든 데이터의 값에대한 최소값과 최대값을 나타낸다. 버텍스의 좌표인 경우 이 `min` 과 `max` 값은 *bounding box - 경계 박스*를 정의하게 된다. 이는 다운로드의 우선순위를 정하거나 시야에 들어왔는지를 점검하는데 유용하게 사용될 수 있다. 일반적으로, 이 정보는 렌더러에 의해 런타임에 역양자화된(dequantized) *quantized-양자화된* 데이터를 저장하고 처리하는 데에도 유용하게 사용된다. 이 양자화에 대한 세부 사항은 이 튜토리얼에서는 다루지 않는다.
 
 
-
-## Sparse accessors
-
+## Sparse accessors - 희소 억세서
 
 With version 2.0, the concept of *sparse accessors* was introduced in glTF. This is a special representation of data that allows very compact storage of multiple data blocks that have only a few different entries. For example, when there is geometry data that contains vertex positions, this geometry data may be used for multiple objects. This may be achieved by referring to the same `accessor` from both objects. If the vertex positions for both objects are mostly the same and differ for only a few vertices, then it is not necessary to store the whole geometry data twice. Instead, it is possible to store the data only once, and use a sparse accessor to store only the vertex positions that differ for the second object. 
 
+glTF 버전 2.0에서는, *희소 억세서 - sparse accessors* 라는 개념이 도입되었다. 이는 특별한 데이터 표현 방법으로 여러개의 데이터 블록이 단지 소수의 몇개만 다른 데이터를 갖고 있을때 압축된 저장을 할 수 있도록 해 준다. 예를 들면, 기하 형상 데이터가 버텍스 좌표를 갖고 있는 경우 이 데이터를 다수의 객체에서도 사용될 수 있다. 이를 위해서는 동일한 `accessor`를 두개의 객체에서 참조하도록 만들 수 있다. 만약, 거의 대부분의 버텍스 좌표가 동일하고 단지 몇개의 버텍스 좌표만 다르다면, 희소 억세서는 두번째 객체에서는 다른 버텍스 좌표만 저장하는 방식으로 데이터를 저장할 수 있다. 
+
 The following is a complete glTF asset, in embedded representation, that shows an example of sparse accessors:
+
+희소 억세서를 사용하는 예제를 glTF 자산으로 포함된 형태의 예제는 다음과 같다.
 
 ```javascript
 {
@@ -267,12 +269,16 @@ The following is a complete glTF asset, in embedded representation, that shows a
 
 The result of rendering this asset is shown in Image 5e:
 
+이 자산에 대한 렌더링 결과는 그림 5e와 같다. 
+
 <p align="center">
 <img src="images/simpleSparseAccessor.png" /><br>
 <a name="simpleSparseAccessor-png"></a>Image 5e: The result of rendering the simple sparse accessor asset.
 </p>
 
 The example contains two accessors: one for the indices of the mesh, and one for the vertex positions. The one that refers to the vertex positions defines an additional `accessor.sparse` property, which contains the information about the sparse data substitution that should be applied:
+
+이 예제에서는 두개의 억세서가 있다. 하나는 메쉬의 인덱스를 나타내고, 다른 하나는 버텍스 좌표를 나타낸다. 버텍스 좌표를 참조하는 억세서에 추가로 `accessor.sparse` 속성을 정의하고, 대체해야 하는 데이터에 대한 정보를 포함하고 있다. 
 
 
 ```javascript
@@ -303,16 +309,17 @@ The example contains two accessors: one for the indices of the mesh, and one for
 
 This `sparse` object itself defines the `count` of elements that will be affected by the substitution. The `sparse.indices` property refers to a `bufferView` that contains the indices of the elements which will be replaced. The `sparse.values` refers to a `bufferView` that contains the actual data. 
 
+이 `sparse` 객체 자신이 `count` 정의하여 대체에 영향을 줄 요소를 정의한다. `sparse.indices` 속성은 `bufferView `를 참조하여 대체될 요소의 인덱스를 갖는다. `sparse.values`는 `bufferView`의 실제 대체될 값을 갖고 있다. 
+
 In the example, the original geometry data is stored in the `bufferView` with index 1. It describes a rectangular array of vertices. The `sparse.indices` refer to the `bufferView` with index 2, which contains the indices `[8, 10, 12]`. The `sparse.values` refers to the `bufferView` with index 3, which contains new vertex positions, namely, `[(1,2,0), (3,3,0), (5,4,0)]`. The effect of applying the corresponding substitution is shown in Image 5f.
+
+이 예제에서는, 인덱스 1의 `bufferView` 에 원래 기하 형상 데이터가 저장되어 있다. 이 데이터는 버텍스 배열로 사각형 모양을 하고 있다.  `sparse.indices`가 `bufferView`를 인덱스 2로 참조하였다. 여기에는 버텍스 인덱스 `[8, 10, 12]` 이 들어 있다. `sparse.values`는 `bufferView`를 인덱스 3으로 참조하였는데 여기에는 새로운 버텍스 좌표 `[(1,2,0), (3,3,0), (5,4,0)]`가 들어 있다. 이를 적용한 결과는 그림 5f에 표시되어 있다.
 
 
 <p align="center">
 <img src="images/simpleSparseAccessorDescription.png" /><br>
-<a name="simpleSparseAccessorDescription-png"></a>Image 5f: The substitution that is done with the sparse accessor.
+<a name="simpleSparseAccessorDescription-png"></a>Image 5f: The substitution that is done with the sparse accessor. - 그림 5f 희소 억세서를 이용한 버텍스 대체
 </p>
 
 
-
-
-
-이전: [Scenes and Nodes](gltfTutorial_004_ScenesNodes.md) | [Table of Contents](README.md) | Next: [Simple Animation](gltfTutorial_006_SimpleAnimation.md)
+이전: [Scenes and Nodes](gltfTutorial_004_ScenesNodes.md) | [Table of Contents](README.md) | 다음: [Simple Animation](gltfTutorial_006_SimpleAnimation.md)
