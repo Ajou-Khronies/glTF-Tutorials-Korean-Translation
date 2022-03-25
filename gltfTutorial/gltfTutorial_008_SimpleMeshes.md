@@ -151,4 +151,4 @@ The [next section](gltfTutorial_009_Meshes.md) will explain meshes and mesh prim
 
 
 
-Previous: [Animations](gltfTutorial_007_Animations.md) | [Table of Contents](README.md) | Next: [Meshes](gltfTutorial_009_Meshes.md)
+이전: [Animations](gltfTutorial_007_Animations.md) | [Table of Contents](README.md) | 다음: [Meshes](gltfTutorial_009_Meshes.md)
