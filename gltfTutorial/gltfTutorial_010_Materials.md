@@ -16,13 +16,22 @@ There are different possible representations for the properties of a material, a
 
 To allow renderers to display objects with a realistic appearance under different lighting conditions, the shading model has to take the *physical* properties of the object surface into account. There are different representations of these physical material properties. One that is frequently used is the *metallic-roughness-model*. Here, the information about the object surface is encoded with three main parameters:
 
+여러 다른 조명 조건에서 실제감 있는 외양을 렌더링하여 디스플레이하기 위해서는, 쉐이딩 모델이 물체 표면의 *물리적* 성질들을 사용해야 한다. 물리적 재질 특성을 표현하는 여러가지 방법들이 존재한다. 이들 중 널리 사용되는 방식이 *금속성-거칠기-모델 metallic-roughness-model* 이다. 여기서는 물체 표면의 정보를 다음 3개의 패러매터로 인코딩 한다. 
+
 - The *base color*, which is the "main" color of the object surface.
+- *기본 색 base color* 는 물체 표면의 "기본(main)" 색상을 정의한다.
 - The *metallic* value. This is a parameter that describes how much the reflective behavior of the material resembles that of a metal.
+- *금속성(metallic)* 값 패러매터는 금속 재질으 반사 특성을 정의한다. 
 - The *roughness* value, indicating how rough the surface is, affecting the light scattering.
+- *거칠기 (roughness)* 값은 표면의 거칠기를 정의하여, 빛이 산란하는 효과를 정의한다.
 
 The metallic-roughness model is the representation that is used in glTF. Other material representations, like the *specular-glossiness-model*, are supported via extensions.
 
+금속성-거칠기(metallic-roughness) 모델은 glTF에서 사용된다. *specular-glossiness-model* 와 같은 다른 재질 표현 방법은 확장판(extension)을 통해 지원된다. 
+
 The effects of different metallic- and roughness values are illustrated in this image:
+
+여러가지 금속성- 과 거칠기 값에 따른 효과를 렌더링한 결과는 다음 그림과 같다. 
 
 <p align="center">
 <img src="images/metallicRoughnessSpheres.png" /><br>
@@ -31,15 +40,23 @@ The effects of different metallic- and roughness values are illustrated in this 
 
 The base color, metallic, and roughness properties may be given as single values and are then applied to the whole object. In order to assign different material properties to different parts of the object surface, these properties may also be given in the form of textures. This makes it possible to model a wide range of real-world materials with a realistic appearance.
 
-Depending on the shading model, additional effects can be applied to the object surface. These are usually given as a combination of a texture and a scaling factor:
+기본색, 메탈릭, 거칠기 특성은 하나의 값으로 주어지고 전체 물체에 적용된다. 물체의 표면의 다른 부분에 다른 재질을 지정하기 위해서는 이 특성들이 텍스처 형태로 주어져야 한다. 이를 통해 실제 세계의 재질을 실감나는 외양으로 표현하는 것이 가능해 진다. 
+
+Depending on the shading model, additional effects can be applied to the object surface. These are usually given as a combination of a texture and a scaling factor:    
+쉐이딩 모델에 따라서, 추가적인 효과를 물체의 표면에 적용할 수 있다. 이는 텍스처와 스캐일링 팩터의 조합으로 주어진다.
 
 - An *emissive* texture describes the parts of the object surface that emit light with a certain color.
+- *emissive* 텍스처는 물체의 표면 일부가 특정한 색의 빛을 내는 효과를 만들어 준다.
 - The *occlusion* texture can be used to simulate the effect of objects self-shadowing each other.
+- *occlusion* 텍스처는 자체 그림자를 서로 물체에 만들어주는 효과를 시뮬레이션 해 준다. 
 - The *normal map* is a texture applied to modulate the surface normal in a way that makes it possible to simulate finer geometric details without the cost of a higher mesh resolution.
+- *normal map* 은 표면의 법선 벡터에 변화를 주는 텍스처로 메쉬의 해상도를 높이지 않고도 표면의 미세한 디테일을 표현하는 것을 시뮬레이션 해 줄 수 있다.  
 
-glTF supports all of these additional properties, and defines sensible default values for the cases that these properties are omitted.
+glTF supports all of these additional properties, and defines sensible default values for the cases that these properties are omitted.   
+glTF는 이들 추가 특성을 지원하고, 이 특성 값들이 생략된 경우 적용될 디폴트 값들을 정의하고 있다.  
 
-The following sections will show how these material properties are encoded in a glTF asset, including various examples of materials:
+The following sections will show how these material properties are encoded in a glTF asset, including various examples of materials:   
+다음 절에서는 재질 특성이 glTF 자산에서 어떻게 인코딩되어 있는지를 설명하고, 재질에 대한 다양한 예제를 갖고 있다.
 
 - [A Simple Material](gltfTutorial_011_SimpleMaterial.md)
 - [Textures, Images, and Samplers](gltfTutorial_012_TexturesImagesSamplers.md) that serve as a basis for defining material properties
