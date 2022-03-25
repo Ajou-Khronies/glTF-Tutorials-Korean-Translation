@@ -58,10 +58,10 @@ glTF는 이들 추가 특성을 지원하고, 이 특성 값들이 생략된 경
 The following sections will show how these material properties are encoded in a glTF asset, including various examples of materials:   
 다음 절에서는 재질 특성이 glTF 자산에서 어떻게 인코딩되어 있는지를 설명하고, 재질에 대한 다양한 예제를 갖고 있다.
 
-- [A Simple Material](gltfTutorial_011_SimpleMaterial.md)
-- [Textures, Images, and Samplers](gltfTutorial_012_TexturesImagesSamplers.md) that serve as a basis for defining material properties
-- [A Simple Texture](gltfTutorial_013_SimpleTexture.md) showing an example of how to use a texture for a material
-- [An Advanced Material](gltfTutorial_014_AdvancedMaterial.md) combining multiple textures to achieve a sophisticated surface appearance for the objects
+- [A Simple Material](gltfTutorial_011_SimpleMaterial.md) - 단순한 재질
+- [Textures, Images, and Samplers](gltfTutorial_012_TexturesImagesSamplers.md) that serve as a basis for defining material properties - 재질 특성을 정의하는 가장 기반으로 적용
+- [A Simple Texture](gltfTutorial_013_SimpleTexture.md) showing an example of how to use a texture for a material - 재질에 텍스처를 사용하는 방법 
+- [An Advanced Material](gltfTutorial_014_AdvancedMaterial.md) combining multiple textures to achieve a sophisticated surface appearance for the objects - 여러개의 텍스처를 결합하여 물체의 복잡한 표면 재질을 만드는 방법 
 
 
 이전: [Meshes](gltfTutorial_009_Meshes.md) | [Table of Contents](README.md) | 다음: [Simple Material](gltfTutorial_011_SimpleMaterial.md)
