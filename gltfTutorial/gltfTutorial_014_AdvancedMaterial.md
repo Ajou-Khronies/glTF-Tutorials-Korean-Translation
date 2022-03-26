@@ -70,4 +70,4 @@ Together, these textures and maps allow modeling a wide range of real-world mate
 
 
 
-Previous: [Simple Texture](gltfTutorial_013_SimpleTexture.md) | [Table of Contents](README.md) | Next: [Simple Cameras](gltfTutorial_015_SimpleCameras.md)
+이전: [Simple Texture](gltfTutorial_013_SimpleTexture.md) | [Table of Contents](README.md) | 다음: [Simple Cameras](gltfTutorial_015_SimpleCameras.md)
