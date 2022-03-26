@@ -103,7 +103,7 @@ The actual image that the texture consists of is stored as a PNG file called `"t
 
 <p align="center">
 <img src="images/testTexture.png" /><br>
-<a name="testTexture-png"></a>Image 15a: The image for the simple texture example.
+<a name="testTexture-png"></a>Image 15a: The image for the simple texture example. - 그림 15a: 간단한 텍스처 예제 이미지
 </p>
 
 Bringing this all together in a renderer will result in the scene rendered in Image 15b.
@@ -112,7 +112,7 @@ Bringing this all together in a renderer will result in the scene rendered in Im
 
 <p align="center">
 <img src="images/simpleTexture.png" /><br>
-<a name="simpleTexture-png"></a>Image 15b: A simple texture on a unit square.
+<a name="simpleTexture-png"></a>Image 15b: A simple texture on a unit square. - 그림 15b: 단위 정사각형위의 간단한 텍스처
 </p>
 
 
